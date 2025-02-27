@@ -9,7 +9,7 @@ const OrderList = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/orders", {
+        const response = await axios.get("https://royalbakeryjaffna.com:5000/api/admin/orders", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -25,7 +25,7 @@ const OrderList = () => {
 
   const handleDeleteOrder = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/orders/${id}`, {
+      await axios.delete(`https://royalbakeryjaffna.com:5000/api/admin/orders/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -44,7 +44,7 @@ const OrderList = () => {
   const handleUpdateOrder = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/admin/orders/${editOrder._id}`,
+        `https://royalbakeryjaffna.com:5000/api/admin/orders/${editOrder._id}`,
         updatedDetails,
         {
           headers: {

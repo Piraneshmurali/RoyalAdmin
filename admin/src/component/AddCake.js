@@ -24,7 +24,7 @@ const AddCake = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/admin/cakes",
+        "https://royalbakeryjaffna.com:5000/api/admin/cakes", 
         formData,
         {
           headers: {

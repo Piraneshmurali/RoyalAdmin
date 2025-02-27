@@ -14,14 +14,14 @@ const AuthForm = () => {
     e.preventDefault();
     try {
       if (isLogin) {
-        const response = await axios.post("http://localhost:5000/api/Admin/login", {
+        const response = await axios.post("https://royalbakeryjaffna.com:5000/api/Admin/login", {
           username,
           password,
         });
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
       } else {
-        const response = await axios.post("http://localhost:5000/api/admin/register", {
+        const response = await axios.post("https://royalbakeryjaffna.com:5000/api/admin/register", {
           username,
           password,
         });

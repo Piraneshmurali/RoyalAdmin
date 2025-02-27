@@ -9,7 +9,7 @@ const AdminBlogView = () => {
   const [formData, setFormData] = useState({ title: "", content: "", image: null });
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/blogs")
+    axios.get("https://royalbakeryjaffna.com:5000/api/blogs")
       .then(response => {
         setBlogs(response.data);
         setLoading(false);
@@ -23,7 +23,7 @@ const AdminBlogView = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+      await axios.delete(`https://royalbakeryjaffna.com:5000/api/blogs/${id}`);
       setBlogs(blogs.filter(blog => blog._id !== id));
     } catch (error) {
       alert("Failed to delete blog");
@@ -43,7 +43,7 @@ const AdminBlogView = () => {
       formDataToSend.append("content", formData.content);
       if (formData.image) formDataToSend.append("photo", formData.image);
 
-      await axios.put(`http://localhost:5000/api/blogs/${editingBlog._id}`, formDataToSend, {
+      await axios.put(`https://royalbakeryjaffna.com:5000/api/blogs/${editingBlog._id}`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" }
       });
 

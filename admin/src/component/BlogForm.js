@@ -18,7 +18,7 @@ const CreateBlogPost = () => {
     formData.append("photo", image); // Use "photo" as the field name
 
     try {
-      await axios.post("http://localhost:5000/api/blogs/create", formData, {
+      await axios.post("https://royalbakeryjaffna.com:5000/api/blogs/create", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
